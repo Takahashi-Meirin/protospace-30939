@@ -46,12 +46,12 @@
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% @comments.each do |comment| %>
             <li class="comments_list">
-               <% @comments.each do |comment| %>
-               <%= comment.text %>
-               <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %>
-               <% end %>
+              <%= comment.text %>
+              <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %>
             </li>
+          <% end %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>

@@ -3,7 +3,7 @@ class PrototypesController < ApplicationController
 
   # indexアクションの定義
   def index
-    @prototype = Prototype.all
+    @prototypes = Prototype.all
   end
 
   # showアクションの定義
