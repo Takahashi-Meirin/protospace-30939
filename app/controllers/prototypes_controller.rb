@@ -1,5 +1,7 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, only: [:show]
+  # ログインしていないユーザーが投稿・編集ページにアクセスするとログインページにいく
+  before_action :authenticate_user!, only: [:edit, :new]
+  # 投稿者本人以外がeditアクションにアクセスしたらトップページにリダイレクトする
   before_action :move_to_index, only: [:edit]
 
   # indexアクションの定義
